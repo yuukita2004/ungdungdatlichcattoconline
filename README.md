@@ -38,8 +38,8 @@ Sử dụng SQLite để lưu trữ thông tin người dùng, kiểu tóc và l
 Hiển thị danh sách các kiểu tóc
 Có hình ảnh minh họa
 Giúp người dùng lựa chọn trước khi đặt lịch
-6.2. Đặt lịch cắt tóc
 
+6.2. Đặt lịch cắt tóc
 Chọn kiểu tóc
 Chọn ngày và giờ
 Lưu thông tin đặt lịch vào hệ thống
