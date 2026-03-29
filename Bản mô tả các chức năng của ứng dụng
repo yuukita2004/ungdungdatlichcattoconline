@@ -1,66 +1,122 @@
-I. TỔNG QUAN ỨNG DỤNG
-1. Giới thiệu chung
-
-Ứng dụng đặt lịch cắt tóc online là một hệ thống hỗ trợ khách hàng đặt lịch cắt tóc một cách nhanh chóng và tiện lợi thông qua thiết bị di động hoặc website. Thay vì phải đến trực tiếp cửa hàng và chờ đợi, người dùng có thể xem trước các kiểu tóc, lựa chọn thời gian phù hợp và đặt lịch trước chỉ với vài thao tác đơn giản.
-
-Ứng dụng hướng đến việc nâng cao trải nghiệm khách hàng, giảm thời gian chờ đợi và giúp cửa hàng quản lý lịch làm việc hiệu quả hơn.
-
-2. Mục tiêu của ứng dụng
-Cung cấp nền tảng đặt lịch cắt tóc trực tuyến
-Giúp người dùng dễ dàng lựa chọn kiểu tóc phù hợp
-Quản lý lịch hẹn một cách khoa học, tránh trùng lịch
-Lưu trữ lịch sử sử dụng dịch vụ của khách hàng
-Hỗ trợ cửa hàng tối ưu quy trình phục vụ
-3. Đối tượng sử dụng
-
-Ứng dụng phục vụ các đối tượng sau:
-
-Khách hàng: Người có nhu cầu đặt lịch cắt tóc
-Quản lý/Chủ tiệm (có thể mở rộng): Quản lý lịch hẹn, kiểu tóc
-4. Phạm vi hệ thống
-
-Ứng dụng bao gồm các chức năng chính:
-
-Xem danh sách các kiểu tóc
-Đặt lịch cắt tóc theo ngày và giờ
-Xem lịch sử các lần đặt lịch
-(Mở rộng) Quản lý người dùng và lịch hẹn
-5. Mô tả tổng thể hệ thống
-
-Hệ thống được xây dựng theo mô hình client-server gồm:
-
-Frontend:
-Phát triển bằng Flutter, cung cấp giao diện người dùng thân thiện, dễ sử dụng.
-Backend:
-Xây dựng bằng Python (Flask), cung cấp API để xử lý dữ liệu và logic nghiệp vụ.
-Database:
-Sử dụng SQLite để lưu trữ thông tin người dùng, kiểu tóc và lịch đặt.
-6. Các chức năng chính
-
-Ứng dụng bao gồm các chức năng cốt lõi sau:
-
-6.1. Xem kiểu tóc
-Hiển thị danh sách các kiểu tóc
-Có hình ảnh minh họa
-Giúp người dùng lựa chọn trước khi đặt lịch
-6.2. Đặt lịch cắt tóc
-Chọn kiểu tóc
-Chọn ngày và giờ
-Lưu thông tin đặt lịch vào hệ thống
-6.3. Xem lịch sử đặt lịch
-Hiển thị các lần đặt lịch trước đó
-Bao gồm: kiểu tóc, thời gian, ngày
-7. Lợi ích của hệ thống
-⏱️ Tiết kiệm thời gian chờ đợi cho khách hàng
-📱 Dễ dàng sử dụng mọi lúc mọi nơi
-📊 Quản lý lịch hẹn hiệu quả
-💡 Tăng trải nghiệm và sự hài lòng của khách hàng
-8. Định hướng phát triển (mở rộng)
-
-Trong tương lai, hệ thống có thể được nâng cấp thêm:
-
-Đăng nhập / đăng ký tài khoản
-Thanh toán online
-Đánh giá dịch vụ
-Thông báo nhắc lịch
-Quản lý nhiều chi nhánh
+1. Login Screen (Đăng nhập)
+- Mục đích
+Xác thực người dùng trước khi sử dụng ứng dụng.
+- Người dùng có thể:
++ Nhập Email hoặc Số điện thoại
++ Nhập Mật khẩu
++ Nhấn Login để truy cập hệ thống
++ Nhấn Sign Up nếu chưa có tài khoản
+- Xử lý hệ thống:
++ Kiểm tra định dạng email/số điện thoại
++ So khớp mật khẩu (có thể mã hóa)
++ Nếu đúng → chuyển sang Home Screen
++ Nếu sai → hiển thị lỗi (ví dụ: “Sai mật khẩu”)
+- Tính năng nâng cao (có thể có):
++ Ghi nhớ đăng nhập (Remember me)
++ Quên mật khẩu (Forgot password)
++ Đăng nhập bằng Google/Facebook
+2. Home Screen (Trang chủ)
+- Mục đích
+Hiển thị dịch vụ (kiểu tóc) để người dùng lựa chọn.
+- Người dùng có thể:
++ Xem danh sách các kiểu tóc phổ biến
++ Xem hình ảnh minh họa
++ Nhấn Select để chọn kiểu tóc
+- Xử lý hệ thống:
++ Load danh sách kiểu tóc từ database/API
++ Lưu kiểu tóc người dùng chọn (tạm thời)
++ Có thể chuyển sang màn hình Booking
+- Mở rộng:
++ Tìm kiếm kiểu tóc
++ Lọc theo giá / xu hướng / giới tính
++ Xem chi tiết kiểu tóc (mô tả, giá, thời gian)
+3. Booking Screen (Đặt lịch)
+- Mục đích
+Cho phép người dùng đặt lịch hẹn cắt tóc.
+- Người dùng thao tác:
++ Choose Style → chọn kiểu tóc đã xem
++ Select Date → chọn ngày
++ Select Time → chọn giờ
++ Nhấn Confirm
+- Xử lý hệ thống:
+Kiểm tra:
++ Ngày hợp lệ (không chọn quá khứ)
++ Giờ còn trống
+- Tạo bản ghi booking:
++ user_id
++ style_id
++ date, time
++ status (pending / confirmed)
+Gửi thông báo xác nhận
+- Luồng dữ liệu:
+Home → chọn style → Booking → Confirm → lưu DB
+- Mở rộng:
++ Chọn thợ (barber)
++ Thanh toán online
++ Nhắc lịch (notification)
+4. Booking History Screen (Lịch sử)
+- Mục đích
+Cho phép người dùng xem lại các lần đặt trước đó.
+- Người dùng có thể:
+Xem danh sách lịch:
++ Ngày
++ Kiểu tóc
+Có thể:
++ Xem chi tiết
++ Đặt lại (re-book)
+- Xử lý hệ thống:
++ Lấy dữ liệu từ bảng booking theo user_id
++ Sắp xếp theo thời gian (mới → cũ)
+- Mở rộng:
++ Hủy lịch
++ Đánh giá dịch vụ
++ Lọc theo trạng thái (đã hoàn thành / đã hủy)
+5. Profile Screen (Hồ sơ cá nhân)
+- Mục đích
+Quản lý thông tin cá nhân người dùng.
+- Người dùng có thể:
+Xem:
++ Tên
++ Số điện thoại
++ Email
++ Nhấn Edit Profile để chỉnh sửa
+- Xử lý hệ thống:
++ Load thông tin từ database
+Khi chỉnh sửa:
++ Validate dữ liệu
++ Cập nhật DB
+- Mở rộng:
++ Đổi mật khẩu
++ Ảnh đại diện
++ Liên kết mạng xã hội
+- Luồng hoạt động tổng thể (User Flow)
+Sign Up / Login
+      ↓
+   Home (chọn kiểu tóc)
+      ↓
+   Booking (chọn ngày giờ)
+      ↓
+   Confirm
+      ↓
+   Lưu vào Booking History
+      ↓
+   Quản lý tại Profile
+7. Góc nhìn hệ thống (Backend)
+- Các bảng dữ liệu chính:
++ Users (id, name, phone, email, password)
++ Hairstyles (id, name, image, price)
++ Bookings (id, user_id, style_id, date, time, status)
+- API cơ bản:
+POST /login
+POST /signup
+GET /hairstyles
+POST /booking
+GET /booking-history
+PUT /profile
+8. Tổng kết chức năng nâng cao (nếu phát triển thêm)
+- Thông báo nhắc lịch
+- Thanh toán online
+- Đánh giá dịch vụ
+- Chọn thợ cắt tóc
+- Tích hợp bản đồ salon
+- Gợi ý kiểu tóc bằng AI
