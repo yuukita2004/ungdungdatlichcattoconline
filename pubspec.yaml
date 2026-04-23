@@ -1,0 +1,26 @@
+name: baitaplon
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  intl: ^0.19.0
+  dio: ^5.7.0
+  provider: ^6.1.1
+  sqflite: ^2.4.1 # Thêm thư viện Database SQL
+  path: ^1.9.1    # Thêm thư viện quản lý đường dẫn file
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
